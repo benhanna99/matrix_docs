@@ -168,7 +168,7 @@ note: you can find theme ID by going to online store > actions > edit code......
 ......The themes ID will display in the URL, something like **https://matrixinternet.myshopify.com/admin/themes/119501160619**
 
 ```
-theme get -p=[your-password] -s=[your-store.myshopify.com] -t=[your-theme-id]
+theme get --password=[your-password] --store=[your-store.myshopify.com] -themeid=[your-theme-id]
 
 ```
 
@@ -176,7 +176,7 @@ eg:
 
 ```
 
-theme get -p=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 -s=matrixinternet.myshopify.com -t=119510892715
+theme get --password=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 --store=matrixinternet.myshopify.com --themeid=119510892715
 
 ```
 
