@@ -23,6 +23,12 @@
   url = "/docs/cms/"
 
 [[docs]]
+  name = "HTML & CSS"
+  weight = 5
+  identifier = "html-css"
+  url = "/docs/html-css/"
+
+[[docs]]
   name = "Hosting"
   weight = 60
   identifier = "hosting"
