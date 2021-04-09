@@ -212,8 +212,79 @@ The current state of a branch (called Head) always references a commit object.
 
 Always think of the state of the branch as the state of last commit. Until we commit it is not part of the branch.
 
+If you run the command ```git branch``` it will give you a list of available branches.
+
 ## Creating Branches
 
 A core aspect of Git is that it allows multiple developers to work on different branches at the same time.
 
+The core reason we use branches is to keep changes isolated and away from the master branch. The master branch is the branch we will have ready to deploy, if we anted to add a new feature we would **branch** off master and then **merge** back in when we are done.
 
+To create a new branch we run the command ```git branch``` followed by the name we will give it - a common naming convention is to prefix your name to the name of the branch:
+
+```
+
+git branch bernard_my_new_branch
+
+```
+
+## Switch Branch
+
+To switch to this branch we use the ```checkout``` command:
+
+```
+
+git checkout bernard_my_new_branch
+
+```
+
+Now we can't impact the master branch until we merge branches.
+
+## Merge Branches
+
+Make sure all changes are committed before merging, using ```git status```.
+
+We should have a clean, working tree.
+
+We should then ```git checkout master``` before merging. Its important to **checkout** the branch we are merging INTO.
+
+Now we are on the master branch. we can check the state of this again using ```git status```.
+
+Now we run ```git merge``` followed by the branch we are merging, and a message:
+
+```
+
+git merge bernard_my_new_branch -m "first merge"
+
+```
+
+
+## Set up a Remote Repository
+
+Here we would have multiple people collaborating on a project, working locally, and pushing changes to a server where the project lives with ```git push```
+
+To pull down a repository with commits that others have pushed up we would use ```git pull```
+
+After setting up a repository in github we would connect to it by copying the SSH address under "quick set up", and giving the remote a nmae, in the below example its **origin**.
+
+```
+git remote add origin REPLACE_WITH_URL_WE_GOT_FROM_GIT_HUB.git
+
+```
+
+Its possible to set up multiple remotes. 
+
+To check what remote we are on, we can use ```git remote```
+
+
+## Push to a Remote Repository
+
+To push all changes to the remote we set up we use ```git push``` followed by the name of the remote and then name of the branch we are pushing. If we don't specify the branch, git will push all available branches.
+
+```
+
+git push origin master
+
+```
+
+If you get a fatal error "...no upstream branch" we can set one with ```git push --set-upstream origin master```
