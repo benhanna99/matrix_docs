@@ -96,7 +96,7 @@ git commit -m "added a new file"
 
 ## Add all files in Current Working Directory
 
-To add all files we use the **git add** command followed by a **dot**. The dot means the current working directory. Using ``git add  .``` we stage all the files in current directory to be committed.
+To add all files we use the **git add** command followed by a **dot**. The dot means the current working directory. Using ```git add  .``` we stage all the files in current directory to be committed.
 
 
 ```
