@@ -288,3 +288,41 @@ git push origin master
 ```
 
 If you get a fatal error "...no upstream branch" we can set one with ```git push --set-upstream origin master```
+
+# Clone Remote Repository
+
+You can get the URL of the repository you need to clone from the Green "code" dropdown whe you open it on github. 
+
+```
+
+git clone https://github.com/XXXXXXXXXXX/XXXXXXXXX_XXXXXX.git
+
+```
+
+If you do a ```git log``` you can see the while repository history.
+
+We could then push commits to the repository
+
+
+# Merge Conflicts
+
+Git will flag merge conflicts.
+
+If you open the file it will highlight the conflicts with Left and Right arrows with the names of the Branches, separated by equal signs. You just need to decide which one you want to keep
+
+```
+<<<< Bills_Branch
+
+<h1>My Blog</h1>
+
+====================
+
+<h2>My Blog</h2> Johns_Branch
+
+>>>> master
+
+```
+
+git commit -am "fixing a merge conflict"
+
+```
