@@ -13,6 +13,54 @@ weight: 140
 toc: true
 ---
 
+# Typical Git Workflow
+
+Before going through each command lets look at how we would typically use git:
+
+Typical usual steps would be **clone, commit, and then push**.
+
+Or just **commit and then push**.
+
+If its a new repository:
+
+```
+git init .
+git add .
+git commit -am "message"
+git remote add origin [url]
+git push origin master
+
+```
+
+If its not a new repository:
+
+```
+git clone [url]
+git commit -am "message"
+git push 
+
+```
+
+When working locally mostly we will be committing and pushing.
+
+```
+git add .
+git commit -am "message"
+git push
+
+```
+
+When Merging branches:
+
+```
+
+git checkout XXXX
+
+git merge XXXX
+
+```
+
+
 # Clone a Repo
 
 Cloning a repo is a useful time saving tool.
@@ -320,6 +368,10 @@ If you open the file it will highlight the conflicts with Left and Right arrows 
 <h2>My Blog</h2> Johns_Branch
 
 >>>> master
+
+```
+
+After you delete the one you don't want you can do a ```git status``` and maybe commit it again:
 
 ```
 
