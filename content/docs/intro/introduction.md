@@ -21,15 +21,15 @@ How to Use These Docs
 
 1. Its OK to copy and paste, we are not interested in Rankings
 
+2. etc etc etc
+
 ## Rules
 
-1. Keep it Succinct and to the Point
+1. Keep it short and to the Point
 
 2. If you want to give deeper explanations use the Blog -see the example
 
-3. It should be almost in step by step format, think how if you were building it for first time with no Experience 
-
-4. If there are 10 ways to do something choose the most common way, we can always use Google
+4. etc etc etc
 
 5. etc etc
 

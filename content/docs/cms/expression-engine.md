@@ -141,8 +141,69 @@ On older versions of EE: Admin > Channel Adminstration > Channels.
 
 Newer versions: Developer > Channels.
 
-Channels are a bucket or container for entries - we can have as many channels as we like and we can create entries for each channel.
+Channels are a bucket or container for entries - we can have as many channels as we like and we can create entries inside for each channel.
 
-If you are familiar with Wordpress They are basically the Custom Post Types of EE.
+If you are familiar with Wordpress they are basically the Custom Post Types of EE.
 
-We would organize or different types of content in channels. EG a blog or testimonials could be in a channel.
+We would organize or different types of content in channels. EG a blog, images for a gallery, case studies or testimonials could be in a channel.
+
+They make it easier to output thing into the template.
+
+- Create a channel
+- Give it a name
+- Give it a short name
+
+
+# Channel Fields
+
+On older versions of EE: Admin > Channel Adminstration > Channels Fields.
+
+Newer versions: Developer > Fields.
+
+We need to give custom fields to our channel to add content, and save them to the channel.
+
+Channel fields are organized by **field group**.
+
+- Create a new channel field group
+- Give it a name.
+
+Once we create a field group, we need to create fields for it.
+
+- Click on the channel field group.
+- Create as many fields as you need, there are many [field types](https://docs.expressionengine.com/latest/fieldtypes/overview.html) to choose from.
+
+Next we need to assign the field group to a channel:
+
+- On older versions of EE: Admin > Channel Adminstration > Channels > Group Assignments > Channel field group
+- Newer versions: Developer > Channels > Edit Channel > Fields > Add Group.
+
+When you Entires > channel name > Publish / Content > channel name > publish,
+
+all the fields should now be present to fill in.
+
+# Channel Entries Tag
+
+The [Channel Entries](https://docs.expressionengine.com/latest/channels/entries.html) tag is the primary tag used within your Templates to show the content you create and edit via your Control Panel’s Create or Edit section. 
+
+It’s the most powerful tag in ExpressionEngine, and the most commonly used since its main function is to retrieve and display your site’s content.
+
+Let’s look at a basic Channel Entries tag example:
+
+```
+
+{exp:channel:entries channel="news" limit="10"}
+    <h2>{title}</h2>
+    {body}
+{/exp:channel:entries}
+
+```
+In the above example, everything between the opening and closing ```{exp:channel:entries}``` tags is repeated 10 times, once for each entry returned from the “News” channel.
+
+The directives that tell the tag how to behave are parameters:
+
+```
+
+channel="news"
+limit="10"
+
+```
