@@ -37,4 +37,6 @@ How to Use These Docs
 
 1. We need Better Tagging for Search - Search is only finding titles on the left, not on the right menu.
 2. Add more images , embed videos
-3. Password Protect
+3. Password Protect.
+4. Fix small styling issues like overflow on ACF page
+5. Typos
