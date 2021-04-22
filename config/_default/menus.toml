@@ -35,8 +35,14 @@
   url = "/docs/hosting/"
 
 [[docs]]
-  name = "Support"
+  name = "Matrix Test"
   weight = 70
+  identifier = "matrix_test"
+  url = "/docs/matrix_test/"
+
+[[docs]]
+  name = "Support"
+  weight = 80
   identifier = "support"
   url = "/docs/support/"
 
