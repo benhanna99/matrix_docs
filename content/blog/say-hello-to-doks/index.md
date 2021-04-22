@@ -1,16 +1,16 @@
 ---
 title: "How Does the Internet Work?"
 description: "Learn How The Internet Works"
-lead: "The internet is simply a wire. 2 computers connected to this wire can communicate."
+lead: ""
 date: 2021-02-04T09:19:42+01:00
 lastmod: 2021-02-04T09:19:42+01:00
 draft: false
 weight: 50
 images: ["say-hello-to-doks.png"]
-contributors: ["Bernard Hanna"]
+contributors: ["John Doe"]
 ---
 
-Whenever an email, webpage, tweet, image etc etc travel across the internet, computers break the information into smaller pieces called **packets**. When information reaches reaches its destination, the packets are reassembled in its original order to make a email, webpage, tweet, image etc etc.
+Whenever an email, webpage, tweet, image etc etc travel across the internet, computers break the information into smaller pieces called **packets**. When information reaches its destination, the packets are reassembled in its original order to make a email, webpage, tweet, image etc etc.
 
 A server is a special computer connected **DIRECTLY** to the Internet. A website is files on that servers hard drive. So therefore a website exists on a computer, somewhere, and is accessed **through** the Internet.
 
