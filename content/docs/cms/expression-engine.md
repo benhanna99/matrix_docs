@@ -193,7 +193,8 @@ Let’s look at a basic Channel Entries tag example:
 
 {exp:channel:entries channel="news" limit="10"}
     <h2>{title}</h2>
-    {body}
+    <p>{news_excerpt}</p>
+    <a href="{title_permalink='news/view'}">Read More</a>
 {/exp:channel:entries}
 
 ```
