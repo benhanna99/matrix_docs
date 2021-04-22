@@ -56,22 +56,6 @@ sudo service apache2 restart
 
 ```
 
-or
-
-```
-
-sudo /etc/init.d/apache2 restart
-
-```
-
-or (newer)
-
-```
-
-sudo systemctl start apache2
-
-```
-
 
 ## Gracefully Reload Apache
 
@@ -89,28 +73,12 @@ sudo service apache2 start
 
 ```
 
-or 
-
-```
-
-sudo /etc/init.d/apache2 start
-
-```
-
 
 ## Stop Apache
 
 ```
 
 sudo service apache2 stop
-
-```
-
-or
-
-```
-
-sudo /etc/init.d/apache2 stop
 
 ```
 
