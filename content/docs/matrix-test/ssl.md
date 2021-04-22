@@ -1,5 +1,5 @@
 ---
-title: "Add SSL Cert on matrix-test.com"
+title: "Add SSL Cert"
 description: "How to Create a Let´s Encrypt Cert on matrix-test.com sites"
 lead: "Creating a Let´s Encrypt Cert on matrix-test.com sites"
 date: 2020-03-16T08:43:34+01:00
@@ -20,8 +20,8 @@ toc: true
 
 3. Click on the "Get it free" button on the Let´s Encrypt section.
 
-![1](/images/ssl-matrix-test/2.png)
+![2](/images/ssl-matrix-test/2.png)
 
 4. Enter your email address and check the "include a 'www' subdomain".
 
-![1](/images/ssl-matrix-test/3.png)
+![3](/images/ssl-matrix-test/3.png)
