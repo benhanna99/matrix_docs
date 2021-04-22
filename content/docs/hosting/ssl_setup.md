@@ -17,7 +17,7 @@ toc: true
 - Login to: geotrust.com
 - Request a Certificate > GeoTrust DV SSL
 
-![4](assets/images/ssl-matrix-test/4.png)
+![4](/images/ssl-matrix-test/4.png)
 
 Generate CSR on the server with this cmd (console):
 
