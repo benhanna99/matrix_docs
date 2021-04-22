@@ -37,8 +37,8 @@
 [[docs]]
   name = "Matrix Test"
   weight = 70
-  identifier = "matrix_test"
-  url = "/docs/matrix_test/"
+  identifier = "matrix-test"
+  url = "/docs/matrix-test/"
 
 [[docs]]
   name = "Support"
