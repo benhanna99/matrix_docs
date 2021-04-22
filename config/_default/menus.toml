@@ -34,6 +34,12 @@
   identifier = "hosting"
   url = "/docs/hosting/"
 
+[[docs]]
+  name = "Support"
+  weight = 70
+  identifier = "support"
+  url = "/docs/support/"
+
 [[main]]
   name = "Docs"
   url = "/docs/intro/introduction/"
