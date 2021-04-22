@@ -19,7 +19,7 @@ toc: true
 
 Note depending what version of EE you are on, the admin is very different, however teh fundamental concepts remain the same. Check what version you are on and make sure the documentation version is the same should you need to reference it. 
 
-# Server Compatibility Wizard
+## Server Compatibility Wizard
 
 If you’re not sure whether your server meets the minimum requirements, the server wizard will run some tests and give you an answer.
 
@@ -28,11 +28,11 @@ If you’re not sure whether your server meets the minimum requirements, the ser
     - Upload the folder to your server.
     - Point your web browser to the folder. For example: https://example.com/ee_wizard
 
-# Download and unzip Expression Engine
+## Download and unzip Expression Engine
 
 [Download ExpressionEngine](https://expressionengine.com/#ee6-download) and unzip the files to a folder on your computer. Then use your favorite FTP client to upload the files to a publicly-accessible directory on your server.
 
-# Set Permissions
+## Set Permissions
 
 Once EE is on the server it is important that the correct permissions are set. 
 
@@ -46,7 +46,7 @@ find system/ee \( -type d -exec chmod 755 {} \; \) -o \( -type f -exec chmod 644
 
 ```
 
-# Install ExpressionEngine using Wizard
+## Install ExpressionEngine using Wizard
 
 You should have database details handy.
 
@@ -57,7 +57,7 @@ http://www.ExampleSite.com/admin.php
 Fill in the details, database name, database user etc and make sure the username is at least **4 characters** long.
 
 
-# Install Optional Modules
+## Install Optional Modules
 
 Older versions of EE will bring you to "options modules" to install during the installation process. 
 
@@ -73,7 +73,7 @@ For Newer version, once logged in to the dashboard go to add-ons and install the
 - jquery (older versions)
 
 
-# Change Admin Area Login Name
+## Change Admin Area Login Name
 
 For security reasons its common to change the name of the EE login area.
 
@@ -110,7 +110,7 @@ Obviously "unimin" is an example in this case, it could be anything you want.
 [Visit the documentation: ](https://docs.expressionengine.com/latest/installation/best-practices.html) for other post install best practices you can do.
 
 
-# Template Groups
+## Template Groups
 
 On older versions of EE, Template groups are located under Design > Templates > Template Manager > New Group
 
@@ -135,7 +135,7 @@ An example of the set up here would be:
 Template groups are Often based on page names - Another common thing to do is match template groups with "channel" names.
 
 
-# Channels
+## Channels
 
 On older versions of EE: Admin > Channel Adminstration > Channels.
 
@@ -154,7 +154,7 @@ They make it easier to output thing into the template.
 - Give it a short name
 
 
-# Channel Fields
+## Channel Fields
 
 On older versions of EE: Admin > Channel Adminstration > Channels Fields.
 
@@ -181,7 +181,7 @@ When you Entires > channel name > Publish / Content > channel name > publish,
 
 all the fields should now be present to fill in.
 
-# Channel Entries Tag
+## Channel Entries Tag
 
 The [Channel Entries](https://docs.expressionengine.com/latest/channels/entries.html) tag is the primary tag used within your Templates to show the content you create and edit via your Control Panel’s Create or Edit section. 
 

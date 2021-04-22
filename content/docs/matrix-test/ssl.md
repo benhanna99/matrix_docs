@@ -13,26 +13,26 @@ weight: 300
 toc: true
 ---
 
-# Step one
+## Step one
 
 Open your project on plesk (websites & domains) tab.
 
 
-# Step two
+## Step two
 
 On the Dashboard of your project, click "SSL/TLS Certficiates"
 
 ![1](/images/1.png)
 
 
-# Step three
+## Step three
 
 Click on the "Get it free" button on the Let´s Encrypt section.
 
 ![2](/images/2.png)
 
 
-# Step four
+## Step four
 
 Enter your email address and check the "include a 'www' subdomain".
 
