@@ -804,51 +804,6 @@ sudo service apache2 reload
 
 ```
 
-If this does not work you can also try the following methods also
-
-### Theme Functions File
-
-There are cases where we have seen that just by adding the following code in theme’s functions.php file, you can increase the upload size:
-
-```
-
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
-
-```
-
-
-### htaccess Method
-
-Some people have tried using the .htaccess method where by modifying the .htaccess file in the root directory, you can increase the maximum upload size in WordPress. Edit the .htaccess file in your WordPress site’s root folder and add the following code:
-
-```
-
-php_value upload_max_filesize 64M
-php_value post_max_size 64M
-php_value max_execution_time 300
-php_value max_input_time 300
-
-```
-
-
-### Create or Edit an existing PHP.INI file
-
-For this method you will need to access your WordPress site’s root folder by using FTP or File Manager app in your hosting account’s cPanel dashboard.
-
-In most cases if you are on a shared host, then you will not see a php.ini file in your directory. If you do not see one, then create a file called php.ini and upload it in the root folder. In that file add the following code:
-
-```
-
-upload_max_filesize = 64M
-post_max_size = 64M
-max_execution_time = 300
-This method is reported to work for many users. Remember if 64 doesn’t work, then try 10MB (sometimes that work).
-
-```
-
-
 ## Change WP options
 
 You can edit WP Hosting Options from the WP admin by adding this to the site URL 
