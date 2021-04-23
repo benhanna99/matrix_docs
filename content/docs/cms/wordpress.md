@@ -13,69 +13,157 @@ weight: 190
 toc: true
 ---
 
-## Add Style Sheets & Scripts to Functions.php
-
->Replace **ThemeName** with your themes name.  Replace styles and scripts with your own
-
-```
-
-if ( ! function_exists( 'ThemeName_enqueue_scripts' ) ) :
-    function ThemeName_enqueue_scripts() {
-
-        /* Theme generated Enqueue Scripts Begin */
-
-    wp_enqueue_script( 'jquery' );
-
-    wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js', null, null, true );
-
-    wp_deregister_script( 'popper' );
-    wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.js', false, null, true);
-
-    wp_deregister_script( 'bootstrap' );
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', false, null, true);
-
-
-    /* Theme generated Enqueue Scripts End */
-
-    /* Theme generated Enqueue Styles Begin */
-
-    wp_deregister_style( 'bootstrap' );
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', false, null, 'all');
-
-    wp_deregister_style( 'style' );
-    wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
-
-    /*Theme generated Enqueue Styles End */
-
-    }
-    add_action( 'wp_enqueue_scripts', 'ThemeName_enqueue_scripts' );
-endif;
-
-```
-
 ## How to Build a Custom Theme
 
-## Wordpress Loop
+First build a static version of website/ theme. When we are finished with front end we can start the conversion to wordpress.
 
-Used to display content such as Page Content, Post Content, a list of posts etc
+### Prepare the theme
+
+Typical Folder structure....Coming soon
+
+### Create Style Sheet
+
+The First thing we need to do is create a stylesheet in the root of our theme, which can be empty except for the important commented out code below, in the root of our theme called **style.css**.
+
+This will include information on our theme, place the below into it and save.
+
+```
+/*
+Theme Name: ThemeName
+Theme URI: http://example.com
+Author: Your name
+Author URI: http://example.com
+Description: A brief description on the theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ThemeName
+*/
 
 ```
 
-<?php if ( have_posts() ) : ?>
-    <?php while ( have_posts() ) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>">
-            <?php the_content(''); ?>
-        </article>
-    <?php endwhile; ?>
-<?php else : ?>
-    <p><?php _e( 'Sorry, no posts matched your criteria.', 'ThemeName' ); ?></p>
-<?php endif; ?>
+
+### Site Content
+
+At its most basic, visualize the html on each of your pages like below:
 
 ```
 
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </body>
+</html>
 
+```
 
-## Add Custom Post Types
+We will break the above into: 
+
+- The WP header: (Everything in the header that we want on every single page, like the navbar)
+- The page body: (This will be specific to the page we are on)
+- The WP footer: (Everything in the footer that we want on every single page, like the footer area, copyright text etc)
+
+Converting the above to Wordpress, your page will now look like this:
+
+```
+<?php get_header(); ?>
+    //Everything inside the main tag (but not the <main> </main> tags themselves)
+<?php get_footer(); ?>
+
+```
+
+### The Header PHP
+
+Create a file called **header.php**
+
+This will include code that we want in the header of every page of our website.
+
+Typically this would be the navbar and logo, as well as meta data, favicon and things like the body the class and language attributes
+
+We call this file in our templates with ```<?php get_header(); ?>```
+
+Below is an example you can use, note some important code:
+
+    -  ```wp_head()``` function which simply does all of the actions hooked to it, like load in plugins.
+    - ```get_body_class``` Which gets the wp template classes.
+
+```
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="generator" content="Web Werkz, webwerkz.com.au">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/a-logo.png" type="image/x-icon">
+        <style media="screen" type="text/css">.responsiveheaderimage { max-width: 100%; height: auto; }</style>
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <?php wp_head(); ?>
+    </head>
+    <body class="<?php echo implode(' ', get_body_class()); ?>">
+        <?php if( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
+             <?php get_template_part( 'template', 'parts/header/navbar' ); ?>
+        <main>
+```
+
+### The Footer PHP
+
+Create a file called **footer.php**
+
+This will include code that we want in the footer of every page of our website.
+
+Typically this would be the footer area of the design, JS scripts, copyright info etc.
+
+We call this file in our templates with ```<?php get_footer(); ?>```
+
+Below is an example you can use, note some important code:
+
+    -  ```wp_footer()``` function which is for outputting data or doing background actions that run just before the closing body tag.
+    
+```
+</main>
+        <footer>
+            <?php get_template_part( 'template', 'parts/footer/page_footer' ); ?>
+            <?php get_template_part( 'template', 'parts/footer/copyright' ); ?>
+        </footer>
+        <?php wp_footer(); ?>
+    </body>
+</html>
+
+```
+
+### Create Functions.php
+
+Coming soon
+
+### Page Hierarchy
+
+Coming soon
+
+### Create Default Page
+
+Coming soon
+
+### Create Single Post Page
+
+Coming soon
+
+### Create Blog Index page (posts page)
+
+Coming soon
+
+### Create Home Page
+
+Coming soon
+
+### Create Page Templates (used for About/ Contact/ ETC ETC Pages)
+
+### Create Custom Post Types
 
 Change ThemeName to your themes name.
 
@@ -123,6 +211,84 @@ if ( ! function_exists( 'ThemeName_init' ) ) :
     
     add_action( 'init', 'ThemeName_init' );
 
+
+```
+
+### Create Index for Custom Post Type
+
+Coming soon
+
+### Create Single post page for Custom Post Type
+
+Coming soon
+
+### Make Content Dynamic With Wp Customiser
+
+Coming soon
+
+### Make Content Dynamic With ACF
+
+Coming soon
+
+### Set up Forms
+
+Coming soon
+
+## Add Style Sheets & Scripts to Functions.php
+
+>Replace **ThemeName** with your themes name.  Replace styles and scripts with your own
+
+```
+
+if ( ! function_exists( 'ThemeName_enqueue_scripts' ) ) :
+    function ThemeName_enqueue_scripts() {
+
+        /* Theme generated Enqueue Scripts Begin */
+
+    wp_enqueue_script( 'jquery' );
+
+    wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js', null, null, true );
+
+    wp_deregister_script( 'popper' );
+    wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.js', false, null, true);
+
+    wp_deregister_script( 'bootstrap' );
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', false, null, true);
+
+
+    /* Theme generated Enqueue Scripts End */
+
+    /* Theme generated Enqueue Styles Begin */
+
+    wp_deregister_style( 'bootstrap' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', false, null, 'all');
+
+    wp_deregister_style( 'style' );
+    wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
+
+    /*Theme generated Enqueue Styles End */
+
+    }
+    add_action( 'wp_enqueue_scripts', 'ThemeName_enqueue_scripts' );
+endif;
+
+```
+
+## Wordpress Loop
+
+Used to display content such as Page Content, Post Content, a list of posts etc
+
+```
+
+<?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+        <article id="post-<?php the_ID(); ?>">
+            <?php the_content(''); ?>
+        </article>
+    <?php endwhile; ?>
+<?php else : ?>
+    <p><?php _e( 'Sorry, no posts matched your criteria.', 'ThemeName' ); ?></p>
+<?php endif; ?>
 
 ```
 
