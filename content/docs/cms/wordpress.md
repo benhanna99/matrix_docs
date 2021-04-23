@@ -71,9 +71,9 @@ We will break the above into:
 Converting the above to Wordpress, your page will now look like this:
 
 ```
-<?php get_header(); ?>
-    //Everything inside the main tag (but not the <main> </main> tags themselves)
-<?php get_footer(); ?>
+<?php get_header(); ?> //Everything Above the <main> </main> tags
+    //Everything inside the <main> </main> tags (but not the <main> </main> tags themselves)
+<?php get_footer(); ?> //Everything below the <main> </main> tags
 
 ```
 
