@@ -434,7 +434,7 @@ define( 'FS_METHOD', 'direct' );
 
 ```
 
-## Change Wp Content Folder Permissions to 777
+## Change Wp Content Folder Permissions to 777/755/etc
 
 Navigate to the site root directory like in the example below and run the following command (change the path after -R 777 to the relevant one)
 
@@ -497,8 +497,9 @@ sudo service apache2 reload
 You can edit WP Hosting Options from the WP admin by adding this to the site URL 
 /wp-admin/options.php
 
+```
 https://EXAMPLESITE.com/wp-admin/options.php
-
+```
 
 ## Display something on Home Page differently on another page
 
