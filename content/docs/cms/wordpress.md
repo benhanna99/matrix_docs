@@ -64,7 +64,7 @@ Used to display content such as Page Content, Post Content, a list of posts etc
 <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>">
-            <?php the_content( __( 'Read More', 'ThemeName' ) ); ?>
+            <?php the_content(''); ?>
         </article>
     <?php endwhile; ?>
 <?php else : ?>
@@ -77,6 +77,7 @@ Used to display content such as Page Content, Post Content, a list of posts etc
 
 ## Add Custom Post Types
 
+Change ThemeName to your themes name.
 
 ```
 
@@ -98,8 +99,8 @@ if ( ! function_exists( 'ThemeName_init' ) ) :
         register_post_type('films', array(
             'labels' => 
                 array(
-                    'name' => __( 'films', 'fw' ),
-                    'singular_name' => __( 'film', 'fw' )
+                    'name' => __( 'films', 'ThemeName' ),
+                    'singular_name' => __( 'film', 'ThemeName' )
                 ),
             'public' => true,
             'hierarchical' => true,
@@ -131,59 +132,24 @@ if ( ! function_exists( 'ThemeName_init' ) ) :
 
 ### Basic Fields
 
-<table>
-<tr>
-<th>Field Type</th>
-<th>Example Code</th>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Text, Text Area, Number, Range, email, URL  
-
-</td>
-<td>
+#### Text, Text Area, Number, Range, email, URL
 
 ```
 <?php the_field( 'FIELD_NAME' ); ?>
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Password
-
-</td>
-<td>
+#### Password
 
 ```
 <?php $password = get_field( 'FIELD_NAME' ); ?>
 
 ```
 
-</td>
-</tr>
-</table>
-
 ### Content Fields
-<table>
-<tr>
-<th>Field Type</th>
-<th>Example Code</th>
-</tr>
-<tr>
-<!--Table row -->
-<td>
 
-Image
 
-</td>
-<td>
+#### Image
 
 ```
 <?php $FIELD_NAME = get_field( 'FIELD_NAME' ); ?>
@@ -193,16 +159,7 @@ Image
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-File
-
-</td>
-<td>
+#### File
 
 ```
 <?php $FIELD_NAME = get_field( 'FIELD_NAME' ); ?>
@@ -212,16 +169,7 @@ File
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Wysiwyg Editor
-
-</td>
-<td>
+#### Wysiwyg Editor, oEmbed
 
 ```
 
@@ -229,33 +177,8 @@ Wysiwyg Editor
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
+#### Gallery
 
-Wysiwyg Editor, oEmbed
-
-</td>
-<td>
-
-```
-
-<?php the_field( 'FIELD_NAME' ); ?>
-
-```
-
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Gallery
-
-</td>
-<td>
 
 ```
 
@@ -271,26 +194,9 @@ Gallery
 
 ```
 
-</td>
-</tr>
-</table>
-
-
 ### Choice Fields
 
-<table>
-<tr>
-<th>Field Type</th>
-<th>Example Code</th>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Select  
-
-</td>
-<td>
+#### Select  
 
 ```
 
@@ -298,16 +204,8 @@ Select
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
+#### Checkbox
 
-Checkbox
-
-</td>
-<td>
 
 ```
 
@@ -321,16 +219,7 @@ endif; ?>
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Radio Button
-
-</td>
-<td>
+#### Radio Button
 
 ```
 
@@ -338,16 +227,7 @@ Radio Button
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Checkbox
-
-</td>
-<td>
+#### Checkbox
 
 ```
 
@@ -361,16 +241,7 @@ endif; ?>
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Button Group
-
-</td>
-<td>
+#### Button Group
 
 ```
 
@@ -378,16 +249,7 @@ Button Group
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-True / False
-
-</td>
-<td>
+#### True / False
 
 ```
 
@@ -399,25 +261,9 @@ True / False
 
 ```
 
-</td>
-</tr>
-</table>
-
 ### Relational Fields
 
-<table>
-<tr>
-<th>Field Type</th>
-<th>Example Code</th>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Link  
-
-</td>
-<td>
+#### Link  
 
 ```
 
@@ -428,16 +274,7 @@ Link
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Post Object
-
-</td>
-<td>
+#### Post Object
 
 ```
 
@@ -451,16 +288,8 @@ Post Object
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
+#### Page Link
 
-Page Link
-
-</td>
-<td>
 
 ```
 
@@ -468,16 +297,7 @@ Page Link
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Relationship
-
-</td>
-<td>
+### Relationship
 
 ```
 
@@ -492,16 +312,7 @@ Relationship
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Button Group
-
-</td>
-<td>
+#### Button Group
 
 ```
 
@@ -509,16 +320,7 @@ Button Group
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Taxonomy
-
-</td>
-<td>
+#### Taxonomy
 
 ```
 
@@ -527,17 +329,7 @@ Taxonomy
 
 ```
 
-</td>
-</tr>
-
-<tr>
-<!--Table row -->
-<td>
-
-User
-
-</td>
-<td>
+#### User
 
 ```
 
@@ -546,25 +338,10 @@ User
 
 ```
 
-</td>
-</tr>
-</table>
-
 ### Jquery Fields
 
-<table>
-<tr>
-<th>Field Type</th>
-<th>Example Code</th>
-</tr>
-<tr>
-<!--Table row -->
-<td>
+#### Google Map
 
-Google Map
-
-</td>
-<td>
 
 ```
 
@@ -577,16 +354,15 @@ Google Map
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
+#### Date Time Picker
 
-Date Time Picker
+```
 
-</td>
-<td>
+<?php the_field( 'FIELD_NAME' ); ?>
+
+``` 
+
+#### Time Picker
 
 ```
 
@@ -594,82 +370,20 @@ Date Time Picker
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
+#### Color Picker
 
-Time Picker
-
-</td>
-<td>
 
 ```
 
 <?php the_field( 'FIELD_NAME' ); ?>
 
 ```
-
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Color Picker
-
-</td>
-<td>
-
-```
-
-<?php the_field( 'FIELD_NAME' ); ?>
-
-```
-
-</td>
-</tr>
-</table>
 
 ### Layout Fields
 
 (Note Sub field as above except **the_sub_field** instead of **'the_field'**  )
 
-<table>
-<tr>
-<th>Field Type</th>
-<th>Example Code</th>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Repeater 
-
-</td>
-<td>
-
-```
-
-<?php if ( have_rows( 'FIELD_NAME' ) ) : ?>
-	<?php while ( have_rows( 'FIELD_NAME' ) ) : the_row(); ?>
-		<?php the_sub_field( 'SUBFIELD' ); ?>
-	<?php endwhile; ?>
-<?php endif; ?>
-
-```
-
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Repeater
-
-</td>
-<td>
+#### Repeater
 
 ```
 
@@ -682,17 +396,7 @@ Repeater
 <?php endif; ?>
 
 ```
-
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Flexible Content (Example has 2 Blocks of Flexi content)
-
-</td>
-<td>
+#### Flexible Content (Example has 2 Blocks of Flexi content)
 
 ```
 
@@ -710,26 +414,10 @@ Flexible Content (Example has 2 Blocks of Flexi content)
 
 ```
 
-</td>
-</tr>
-<tr>
-<!--Table row -->
-<td>
-
-Clone
-
-</td>
-<td>
-
-```
+#### Clone
 
 You Can use this field to clone previously built fields, in Groups used on other pages for example
 
-```
-
-</td>
-</tr>
-</table>
 
 ## Remove FTP upload Message
 
@@ -776,7 +464,7 @@ add the following code.
 
 Check to see what the max file upload size is set at in PHP.ini (usually it is 2 and you can search "2")
 
-Usually the PHP.IN will somewhere like:
+Usually the PHP.INI will somewhere like:
 
 ```
 
@@ -809,7 +497,7 @@ sudo service apache2 reload
 You can edit WP Hosting Options from the WP admin by adding this to the site URL 
 /wp-admin/options.php
 
-https:/EXAMPLESITE.com/wp-admin/options.php
+https://EXAMPLESITE.com/wp-admin/options.php
 
 
 ## Display something on Home Page differently on another page
