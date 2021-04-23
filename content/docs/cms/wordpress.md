@@ -381,7 +381,7 @@ endif; ?>
 
 ### Layout Fields
 
-(Note Sub field as above except **the_sub_field** instead of **'the_field'**  )
+(Note Sub field is the field name like how it is used above, except **the_sub_field** instead of **'the_field'**  )
 
 #### Repeater
 
