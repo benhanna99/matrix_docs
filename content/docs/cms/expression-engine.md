@@ -81,31 +81,27 @@ For example instead of:
 http://www.ExampleSite.com/admin.php
 
 Change to:
-http://www.ExampleSite.com/unimin
+http://www.ExampleSite.com/new-admin
 
-To do this we rename the **system** folder. In this case we rename it to: *unimin*
+To do this we rename the **system** folder. In this case we rename it to: *new-admin*
 
 Next open **admin.php** and **index.php**.
 
 In both these files we would change the line:
 
 ```
-
 $system_path = './system';
-
 ```
 
 To:
 
 ```
-
-$system_path = './unimin';
-
+$system_path = './new-admin';
 ```
 
-We can then rename **admin.php** to **unimin.php**
+We can then rename **admin.php** to **new-admin.php**
 
-Obviously "unimin" is an example in this case, it could be anything you want.
+Obviously "new-admin" is an example in this case, it could be anything you want.
 
 [Visit the documentation: ](https://docs.expressionengine.com/latest/installation/best-practices.html) for other post install best practices you can do.
 
@@ -132,7 +128,7 @@ An example of the set up here would be:
 - layouts
 
 
-Template groups are Often based on page names - Another common thing to do is match template groups with "channel" names.
+Template groups are often based on page names - Another common thing to do is match template groups with "channel" names.
 
 
 ## Channels
@@ -152,6 +148,7 @@ They make it easier to output thing into the template.
 - Create a channel
 - Give it a name
 - Give it a short name
+
 
 
 ## Channel Fields
@@ -179,7 +176,7 @@ Next we need to assign the field group to a channel:
 
 When you Entires > channel name > Publish / Content > channel name > publish,
 
-all the fields should now be present to fill in.
+All the fields should now be present to fill in.
 
 ## Channel Entries Tag
 
@@ -190,21 +187,42 @@ It’s the most powerful tag in ExpressionEngine, and the most commonly used sin
 Let’s look at a basic Channel Entries tag example:
 
 ```
-
-{exp:channel:entries channel="news" limit="10"}
+{exp:channel:entries channel="news" limit="10" status="open"}
     <h2>{title}</h2>
     <p>{news_excerpt}</p>
     <a href="{title_permalink='news/view'}">Read More</a>
 {/exp:channel:entries}
-
 ```
 In the above example, everything between the opening and closing ```{exp:channel:entries}``` tags is repeated 10 times, once for each entry returned from the “News” channel.
 
-The directives that tell the tag how to behave are parameters:
+We use the status "open" but we could also create a custom status for more flexibility on what displays here. For example items with a class of "red-bg" could be given the status of Red-Background - And only items with a red background would show.
+We could also not include this and it will default to open.
+
+The other directives that tell the tag how to behave are parameters:
 
 ```
-
 channel="news"
 limit="10"
+```
+
+```{news_excerpt}``` is a Field we set up.
+
+
+## Building Templates
+
+First create a new template:
+
+- Create a new template
+- In this example we will call it "view"
+- Save it
+
+To display our news article:
 
 ```
+{exp:channel:entries channel="news" limit="1"}
+    {title}
+    {news_body}
+{/exp:channel:entries}
+```
+
+## Template Layouts

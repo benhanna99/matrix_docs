@@ -30,8 +30,8 @@ If the above doesn't work we can change the time it holds the log files for by r
 ### Disable Binary Log MySQL 5
 - SSH into the server
 - Login to MySQL ```mysql -u root -p```
-```PURGE BINARY LOGS BEFORE '2019-04-02 22:46:26';``` (Enter the appropriate date here)
-```SET GLOBAL expire_logs_days = 1;```
+- ```PURGE BINARY LOGS BEFORE '2019-04-02 22:46:26';``` (Enter the appropriate date here)
+- ```SET GLOBAL expire_logs_days = 1;```
 - Logout of MySQL. (ctrl+c)
 - Restart the MySQL service ```sudo service mysql restart```
 
