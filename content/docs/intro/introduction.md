@@ -23,16 +23,6 @@ How to Use These Docs
 
 2. etc etc etc
 
-## Rules
-
-1. Keep it short and to the Point
-
-2. If you want to give deeper explanations use the Blog -see the example
-
-4. etc etc etc
-
-5. etc etc
-
 ## To Dos / Change Requests
 
 1. We need Better Tagging for Search - Search is only finding titles on the left, not on the right menu.
