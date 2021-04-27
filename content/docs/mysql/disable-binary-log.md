@@ -28,17 +28,17 @@ In some cases this may not work and may cause issues - if that is the case then 
 If the above doesn't work we can change the time it holds the log files for by running the following commands - You can also turn it off by setting to 0
 
 ### MySQL 5
-SSH into the server
-Login to MySQL
+- SSH into the server
+- Login to MySQL ```mysql -u root -p```
 ```PURGE BINARY LOGS BEFORE '2019-04-02 22:46:26';``` (Enter the appropriate date here)
 ```SET GLOBAL expire_logs_days = 1;```
-Logout of MySQL
-Restart the MySQL service
+- Logout of MySQL. (ctrl+c)
+- Restart the MySQL service ```sudo service mysql restart```
 
 ### MySQL 8
-SSH into the server
-Login to MySQL
-```PURGE BINARY LOGS BEFORE '2019-04-02 22:46:26';``` (Enter the appropriate date here)
-```SET GLOBAL binlog_expire_logs_seconds = 86400;```
-Logout of MySQL
-Restart the MySQL service
+- SSH into the server
+- Login to MySQL ```mysql -u root -p```
+- ```PURGE BINARY LOGS BEFORE '2019-04-02 22:46:26';``` (Enter the appropriate date here)
+- ```SET GLOBAL binlog_expire_logs_seconds = 86400;```
+- Logout of MySQL (ctrl+c)
+- Restart the MySQL service ```sudo service mysql restart```
