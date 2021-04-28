@@ -26,6 +26,11 @@ fields:
 - type: boolean
   name: toc
   label: toc
+- name: parent
+  type: text
+  config:
+    required: false
+  label: parent
 pages:
 - content/docs/mysql/test.md
 - content/docs/test.md
