@@ -1,7 +1,6 @@
 +++
 date = 2021-04-27T23:00:00Z
 description = "test"
-draft = true
 images = []
 lastmod = 2021-04-27T23:00:00Z
 lead = "test"
@@ -12,4 +11,4 @@ weight = 10
 +++
 ## Test
 
-Paragraph
+**Paragraph**
