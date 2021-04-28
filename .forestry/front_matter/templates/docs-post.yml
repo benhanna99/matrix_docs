@@ -27,4 +27,5 @@ fields:
   name: toc
   label: toc
 pages:
+- content/docs/mysql/test.md
 - content/docs/test.md
