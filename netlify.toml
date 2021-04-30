@@ -22,3 +22,8 @@
 
 [context.branch-deploy]
   command = "npx hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[headers]]
+  for = "/*"
+[headers.values]
+Content-Security-Policy = "default-src 'self';"
